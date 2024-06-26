@@ -1,0 +1,239 @@
+use db_school; 
+
+
+db.createCollection("courses");
+
+// Insertar los documentos en la colección "courses"
+db.courses.insertMany([
+  {
+    "nombre_curso": "1A",
+    "nombre_profesor_encargado": "maria"
+  },
+  {
+    "nombre_curso": "2B",
+    "nombre_profesor_encargado": "juan"
+  },
+  {
+    "nombre_curso": "3A",
+    "nombre_profesor_encargado": "luis"
+  }
+]);
+
+----------------------------------------------------------------
+
+db.createCollection("managers");
+
+// Insertar los documentos en la colección "managers"
+db.managers.insertMany([
+  {
+    "nombre": "juan",
+    "apellido": "ruiz",
+    "estado": "activo",
+    "fecha_inicio": ISODate("2000-01-15"),
+    "tipo_rol": "rector",
+    "nombre_escuela": "colegio san gabriel",
+    "tipo_documento": "CC"
+  },
+  {
+    "nombre": "adriana",
+    "apellido": "mona",
+    "estado": "inactivo",
+    "fecha_inicio": ISODate("2015-02-21"),
+    "tipo_rol": "secretaria",
+    "nombre_escuela": "escuela nueva horizonte",
+    "tipo_documento": "CC"
+  },
+  {
+    "nombre": "Manuel",
+    "apellido": "Quiroz",
+    "estado": "activo",
+    "fecha_inicio": ISODate("2019-04-19"),
+    "tipo_rol": "coordinador",
+    "nombre_escuela": "instituto aurora",
+    "tipo_documento": "CC"
+  }
+]);
+
+
+----------------------------------------------------------------
+
+db.createCollection("roles");
+
+// Insertar los documentos en la colección "roles"
+db.roles.insertMany([
+  {
+    "nombre_rol": "rector"
+  },
+  {
+    "nombre_rol": "coordinador"
+  },
+  {
+    "nombre_rol": "secretaria"
+  }
+]);
+
+----------------------------------------------------------------
+
+db.createCollection("schools");
+
+// Insertar los documentos en la colección "schools"
+db.schools.insertMany([
+  {
+    "nombre": "escuela nueva horizonte",
+    "direccion": "calle 10 # 5-67, cali, valle del cauca",
+    "email": "admisiones@colegiosanpablo.edu"
+  },
+  {
+    "nombre": "colegio san gabriel",
+    "direccion": "carrera 7 # 24-89, medellín, antioquia",
+    "email": "info@escuelacreativa.edu"
+  },
+  {
+    "nombre": "instituto aurora",
+    "direccion": "calle 73 # 16-45, bogotá, cundinamarca",
+    "email": "principal@colegiomercurio.edu"
+  }
+]);
+
+----------------------------------------------------------------
+
+// Crear la colección "specialties"
+db.createCollection("specialties");
+
+// Insertar los documentos en la colección "specialties"
+db.specialties.insertMany([
+  {
+    "nombre_especialidad": "educación bilingüe"
+  },
+  {
+    "nombre_especialidad": "neuroeducación"
+  },
+  {
+    "nombre_especialidad": "educación inclusiva"
+  }
+]);
+
+----------------------------------------------------------------
+
+db.createCollection("students");
+
+// Insertar los documentos en la colección "students"
+db.students.insertMany([
+  {
+    "nombre": "ana",
+    "apellido": "gomez",
+    "email": "ana.gomez@yopmail.com",
+    "fecha_nacimiento": ISODate("2003-04-15"),
+    "numero_documento": "123456789",
+    "tipo_documento": "TI",
+    "nombre_escuela": "escuela nueva horizonte",
+    "nombre_curso": "1A",
+    "doc_profesor": "987654321"
+  },
+  {
+    "nombre": "juan",
+    "apellido": "lopez",
+    "email": "juan.lopez@yopmail.com",
+    "fecha_nacimiento": ISODate("2002-07-22"),
+    "numero_documento": "7841241154",
+    "tipo_documento": "TI",
+    "nombre_escuela": "colegio san gabriel",
+    "nombre_curso": "2B",
+    "doc_profesor": "654321987"
+  },
+  {
+    "nombre": "maria",
+    "apellido": "martinez",
+    "email": "maria.martinez@yopmail.com",
+    "fecha_nacimiento": ISODate("2004-01-10"),
+    "numero_documento": "456789123",
+    "tipo_documento": "TI",
+    "nombre_escuela": "instituto aurora",
+    "nombre_curso": "3A",
+    "doc_profesor": "12345664"
+  }
+]);
+
+----------------------------------------------------------------
+
+db.createCollection("subjects");
+
+// Insertar los documentos en la colección "subjects"
+db.subjects.insertMany([
+  {
+    "nombre": "matematicas",
+    "nombre_curso": "1A",
+    "doc_profesor": "987654321"
+  },
+  {
+    "nombre": "ciencias naturales",
+    "nombre_curso": "2B",
+    "doc_profesor": "654321987"
+  },
+  {
+    "nombre": "historia",
+    "nombre_curso": "3A",
+    "doc_profesor": "12345664"
+  }
+]);
+
+----------------------------------------------------------------
+
+db.createCollection("teachers");
+
+// Insertar los documentos en la colección "teachers"
+db.teachers.insertMany([
+  {
+    "nombre": "juan",
+    "apellido": "perez",
+    "fecha_nacimiento": "1998-03-25",
+    "fecha_inicio": ISODate("2019-09-10"),
+    "estado": "activo",
+    "especialidad": "educación bilingüe",
+    "numero_documento": "987654321",
+    "materia": "matematicas",
+    "tipo_documento": "CC",
+    "nombre_escuela": "escuela nueva horizonte"
+  },
+  {
+    "nombre": "luis",
+    "apellido": "martinez",
+    "fecha_nacimiento": "1990-11-07",
+    "fecha_inicio": ISODate("2021-01-30"),
+    "estado": "inactivo",
+    "especialidad": "neuroeducación",
+    "numero_documento": "654321987",
+    "materia": "ciencias naturales",
+    "tipo_documento": "CC",
+    "nombre_escuela": "escuela nueva horizonte"
+  },
+  {
+    "nombre": "ana",
+    "apellido": "ramirez",
+    "fecha_nacimiento": "2000-07-03",
+    "fecha_inicio": ISODate("2020-08-20"),
+    "estado": "inactivo",
+    "especialidad": "educación inclusiva",
+    "numero_documento": "12345664",
+    "materia": "historia",
+    "tipo_documento": "CC",
+    "nombre_escuela": "escuela nueva horizonte"
+  }
+]);
+
+
+----------------------------------------------------------------
+
+db.createCollection("type_docs");
+
+// Insertar los documentos en la colección "type_docs"
+db.type_docs.insertMany([
+  {
+    "nombre_documento": "cedula de ciudadania",
+    "abreviatura": "CC"
+  },
+  {
+    "nombre_documento": "tarjeta de identidad",
+    "abreviatura": "TI"
+  }
+]);
